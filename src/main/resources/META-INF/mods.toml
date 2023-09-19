@@ -1,0 +1,27 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "MIT"
+
+[[mods]]
+modId = "bluemap-opac"
+version = "${version}"
+displayName = "BlueMap-OPAC"
+displayURL="https://github.com/unilock/BlueMap-OPAC"
+authors="unilock"
+description = '''
+BlueMap + OPAC = <3
+'''
+
+[[dependencies.bluemap-opac]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bluemap-opac]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
