@@ -3,7 +3,7 @@ loaderVersion = "[40,)"
 license = "MIT"
 
 [[mods]]
-modId = "bluemap-opac"
+modId = "bluemap_opac"
 version = "${version}"
 displayName = "BlueMap-OPAC"
 displayURL="https://github.com/unilock/BlueMap-OPAC"
@@ -12,16 +12,30 @@ description = '''
 BlueMap + OPAC = <3
 '''
 
-[[dependencies.bluemap-opac]]
+[[dependencies.bluemap_opac]]
 modId = "forge"
 mandatory = true
 versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.bluemap-opac]]
+[[dependencies.bluemap_opac]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.18.2,)"
 ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.bluemap_opac]]
+modId = "bluemap"
+mandatory = true
+versionRange = "[3.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.bluemap_opac]]
+modId = "openpartiesandclaims"
+mandatory = true
+versionRange = "[0.19.0,)"
+ordering = "AFTER"
 side = "BOTH"
