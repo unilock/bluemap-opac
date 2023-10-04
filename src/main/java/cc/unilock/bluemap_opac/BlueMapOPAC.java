@@ -68,9 +68,10 @@ public class BlueMapOPAC {
 	@SubscribeEvent
 	public void onServerTick(final TickEvent.ServerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			if (update_in <= 0) return;
-			if (--update_in <= 0) {
+			if (update_in == 0) {
 				BlueMapAPI.getInstance().ifPresent(BlueMapOPAC::updateClaims);
+			} else {
+				update_in--;
 			}
 		}
 	}
@@ -85,11 +86,11 @@ public class BlueMapOPAC {
 					final BlueMapAPI api = BlueMapAPI.getInstance().orElse(null);
 					if (api == null) {
 						ctx.getSource().sendError(new LiteralText("BlueMap not loaded").formatted(Formatting.RED));
-						return 0;
+						return 1;
 					}
 					updateClaims(api);
 					ctx.getSource().sendFeedback(
-						new LiteralText("BlueMap OPaC claims refreshed").formatted(Formatting.GREEN),
+						new LiteralText("BlueMap OPAC claims refreshed").formatted(Formatting.GREEN),
 						true
 					);
 					return Command.SINGLE_SUCCESS;
