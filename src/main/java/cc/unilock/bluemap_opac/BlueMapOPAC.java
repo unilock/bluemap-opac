@@ -166,7 +166,7 @@ public class BlueMapOPAC {
 			LOGGER.warn("updateClaims called with minecraftServer == null!");
 			return;
 		}
-		LOGGER.info("Refreshing BlueMap OPAC markers");
+		//LOGGER.info("Refreshing BlueMap OPAC markers");
 		OpenPACServerAPI.get(minecraftServer)
 			.getServerClaimsManager()
 			.getPlayerInfoStream()
@@ -233,7 +233,7 @@ public class BlueMapOPAC {
 					});
 				});
 			});
-		LOGGER.info("Refreshed BlueMap OPAC markers");
+		//LOGGER.info("Refreshed BlueMap OPAC markers");
 		update_in = BlueMapOPACConfig.updateInterval.get();
 	}
 
